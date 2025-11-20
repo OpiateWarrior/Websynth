@@ -1,0 +1,151 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+	<link rel="stylesheet" href="keyboard.css">
+	<link rel="stylesheet" href="GUI.css">
+	<link rel="stylesheet" href="GUI-volume.css">
+	<link rel="stylesheet" href="GUI-synth.css">
+	<style>
+	body {
+		background: #020024;
+		background: linear-gradient(45deg,rgba(2, 0, 36, 1) 0%, rgba(9, 121, 26, 1) 56%, rgba(22, 184, 22, 1) 100%);		
+		background-attachment: fixed;
+		display:flex;
+	}
+	.key-selector {
+		color: white;
+	}
+
+	</style>
+	
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/tone/15.3.3/Tone.js"></script>
+</head>
+
+<div class="gui-container">
+	<div class="gui-header">
+		<img src="violin-key-icon.jpg" alt="Violin key icon" class="gui-header-icon"></img>
+	</div>
+	<div class="gui-element">
+	<label class="key-selector" for="key">KEY:</label>
+
+		<select id="js-key-select" name="key" id="key" class="dropdown-element">
+			<option class="option-label" value="C">C</option>
+			<option class="option-label" value="C#">C#</option>
+			<option class="option-label" value="D">D</option>
+			<option class="option-label" value="D#">D#</option>
+			<option class="option-label" value="E">E</option>
+			<option class="option-label" value="F">F</option>
+			<option class="option-label" value="F#">F#</option>
+			<option class="option-label" value="G">G</option>
+			<option class="option-label" value="G#">G#</option>
+			<option class="option-label" value="A">A</option>
+			<option class="option-label" value="A#">A#</option>
+			<option class="option-label" value="B">B</option>
+		</select>
+	</div>
+	<div class="gui-element">
+	<label class="key-selector" for="scale">SCALE:</label>
+
+		<select id="js-scale-select" name="scale" id="scale" class="dropdown-element">
+			<option value="chromatic">chromatic</option>
+			<option value="naturalMinor">natural Minor</option>
+			<option value="naturalMajor">natural Major</option>
+			<option value="pentatonicMinor">pentatonic Minor</option>
+			<option value="pentatonicMajor">pentatonic Major</option>
+			<option value="bluesMinor">blues Minor</option>
+			<option value="bluesMajor">blues Major</option>
+		</select>
+	</div>
+	<div class="gui-element">
+	<label class="key-selector" for="octave">STARTING OCTAVE:</label>
+
+		<select id="js-octave-select" name="octave" id="octave" class="dropdown-element">
+			<option value="1">1</option>
+			<option value="2">2</option>
+			<option value="3">3</option>
+			<option value="4">4</option>
+			<option value="5">5</option>
+		</select>
+	</div>
+	<div class="gui-element">	
+	<label class="key-selector" for="octave-range">RANGE OF OCTAVES:</label>
+
+		<select id="js-range-select" name="octave-range" id="octave-range" class="dropdown-element">
+			<option value="1">1</option>
+			<option value="2">2</option>
+			<option value="3">3</option>
+			<option value="4">4</option>
+			<option value="5">5</option>
+		</select>
+	</div>
+</div>
+
+<div class="gui-volume-container">
+	<div class="gui-volume-header">
+		<img src="speaker-on-icon.png" alt="Violin key icon" class="gui-header-icon"></img>
+	</div>
+	<div class="volume-element">
+		<input type="range" min="0" max="100" value="50" class="volume-slider" id="js-gain-select">
+		<div class="percentages">
+			<div>0%</div>
+			<div>50%</div>
+			<div>100%</div>
+		</div>
+	</div>
+</div>
+
+<div class="gui-synth-container">
+	<div class="gui-synth-header">
+		<img src="synth-icon.png" alt="Violin key icon" class="gui-header-icon"></img>
+	</div>
+	<div class="gui-instrument-element">
+		<div class="wave-label">
+			INSTRUMENT FUNCION:
+		</div>
+		<div class="instrument-dropdown">
+			<label class="instrument-selector" for="instrument"></label>
+		
+			<select id="js-instrument-select" name="instrument" id="instrument" class="dropdown-element">
+				<option class="option-label" value="C">Synth</option>
+				<option class="option-label" value="C#">PolySynth</option>
+				<option class="option-label" value="D">Membrane Synth</option>
+				<option class="option-label" value="D">Metal Synth</option>
+			</select>
+		</div>
+	</div>
+	
+	<div class="gui-instrument-element">
+		<div class="wave-label">
+			WAVE FUNCION:
+		</div>
+		<div class="wave-dropdown">
+			<label class="instrument-selector" for="instrument"></label>
+
+			<select id="js-wave-select" name="wave" id="wave" class="dropdown-element">
+				<option class="option-label" value="C">Sine</option>
+				<option class="option-label" value="C#">Triangle</option>
+				<option class="option-label" value="D">Square</option>
+				<option class="option-label" value="D">Saw</option>
+			</select>
+		</div>	
+	</div>
+
+</div>
+
+
+
+
+<div class="keyboard">
+
+</div>
+
+</html>
+
+<script src="scale_list.js"></script>
+<script src="piano.js"></script>
+<script src="save_load.js"></script>
+<script src="keyboard_render.js"></script>
+<script src="piano_GUI.js"></script>
+
+		
