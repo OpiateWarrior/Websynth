@@ -1,0 +1,53 @@
+.gui-synth-container {
+  	width: 250px;
+	display: flex;
+	flex-direction: column;
+	background: rgba(255, 255, 255, 0.2);
+	backdrop-filter: blur(5px);
+	-webkit-backdrop-filter: blur(5px);
+	border-radius: 10px;
+	border: 0px solid rgba(255, 255, 255, 0.3);
+	box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
+	transition: 0.2s;
+	margin:20px;
+}
+.gui-synth-container:hover{
+	box-shadow: 0 4px 30px rgba(0, 0, 0, 0.6);
+	transition: 0.2s;
+}
+.gui-synth-header {
+	height: 60px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-color: black;
+	border-radius: 10px 10px 0px 0px;
+}
+.gui-synth-header-icon {
+	width: 50px;
+	height: 50px;
+}
+.gui-instrument-element {
+	display:flex;
+	flex-direction: column;
+	color:white;
+	flex: 1;
+	justify-content: space-between;
+	align-items: center;
+	padding: 10px;
+	font-size: 15px;
+	font-family: arial;
+	font-weight: bold;
+	border: 1px solid rgba(255, 255, 255, 0.3);
+	border-bottom: none;
+}
+.gui-instrument-element:hover{
+	background: rgba(255, 255, 255, 0.1);
+}
+.gui-instrument-element:last-child {
+	border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+	border-radius: 0px 0px 10px 10px;
+}
+.instrument-selector {
+	color: white;
+}

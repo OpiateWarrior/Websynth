@@ -1,0 +1,46 @@
+.keyboard {
+	position: fixed;
+	height: auto;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	
+	margin: 30px;
+	display: flex;
+}
+.keyboardButton {
+	min-width:30px;
+	height: 300px;
+	
+	background: rgba(255, 255, 255, 0.2);
+	backdrop-filter: blur(5px);
+	-webkit-backdrop-filter: blur(5px);
+	border: 2px solid rgba(255, 255, 255, 0.3);
+	border-right-width: 1px;
+	border-left-width: 1px;
+	box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
+	
+	font-weight: 700;
+	font-size: 20px;
+	color: white;
+	
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	flex: 1;
+	transition: 0.2s;
+	}
+.keyboardButton:first-child {
+	border-radius: 10px 0px 0px 10px; 
+	border-left-width: 2px;
+}
+.keyboardButton:last-child {
+	border-radius: 0px 10px 10px 0px;
+	border-right-width: 2px;
+}
+.keyboardButtonActivated {
+	background: rgba(255, 255, 255, 0.1);
+	transition: 0.2s;
+	font-size: 30px;
+}
