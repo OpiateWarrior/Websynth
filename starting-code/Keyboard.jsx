@@ -1,3 +1,4 @@
+/*
 export function App() {
 	[scale, setScale] = React.useState...	// state moved up to allow acces from both gui and keyboard
 	
@@ -47,3 +48,4 @@ export function Keyboard({scale}) {
 	)
 }
 
+*/
