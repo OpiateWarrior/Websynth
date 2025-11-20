@@ -2,8 +2,7 @@ const keyDropdown 	 = 	document.getElementById	("js-key-select");
 const scaleDropdown  = 	document.getElementById	("js-scale-select");
 const octaveDropdown = 	document.getElementById	("js-octave-select");
 const rangeDropdown	 = 	document.getElementById	("js-range-select");
-
-const gainBar 		 =	document.getElementById ("js-gain-select")
+const gainBar 		 =	document.getElementById ("js-gain-select");
 
 
 keyDropdown.addEventListener('change',		() => {
@@ -30,6 +29,6 @@ rangeDropdown.addEventListener('change',	() => {
 	renderKeyboard();
 });
 
-gainBar.addEventListener('change',	() => {
+gainBar.addEventListener('change',			() => {
 	guiGain()
 });
