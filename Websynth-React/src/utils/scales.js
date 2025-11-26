@@ -1,4 +1,5 @@
-export const sequence = [
+export const listOfScales = {
+sequence: [
 	{semitone:'C', octave: 5},
 	{semitone:'C#', octave: 5},
 	{semitone:'D', octave: 5},
@@ -11,8 +12,8 @@ export const sequence = [
 	{semitone:'A', octave: 5},
 	{semitone:'A#', octave: 5},
 	{semitone:'B', octave: 5}
-]
-const chromatic = [
+],
+chromatic: [
 	{semitone:'C', octave: 5},
 	{semitone:'C#', octave: 5},
 	{semitone:'D', octave: 5},
@@ -25,8 +26,8 @@ const chromatic = [
 	{semitone:'A', octave: 5},
 	{semitone:'A#', octave: 5},
 	{semitone:'B', octave: 5}
-]
-const naturalMinor = [
+],
+naturalMinor: [
 	{semitone:'C', octave: 5},
 	{semitone:'D', octave: 5},
 	{semitone:'D#', octave: 5},
@@ -34,8 +35,8 @@ const naturalMinor = [
 	{semitone:'G', octave: 5},
 	{semitone:'G#', octave: 5},
 	{semitone:'A#', octave: 5},
-]
-const naturalMajor = [
+],
+ naturalMajor: [
 	{semitone:'C', octave: 5},
 	{semitone:'D', octave: 5},
 	{semitone:'E', octave: 5},
@@ -43,30 +44,30 @@ const naturalMajor = [
 	{semitone:'G', octave: 5},
 	{semitone:'A', octave: 5},
 	{semitone:'B', octave: 5},
-]
-const pentatonicMinor = [
+],
+ pentatonicMinor: [
 	{semitone:'C', octave: 5},
 	{semitone:'D#', octave: 5},
 	{semitone:'F', octave: 5},
 	{semitone:'G', octave: 5},
 	{semitone:'A#', octave: 5}
-]
-const pentatonicMajor = [
+],
+ pentatonicMajor: [
 	{semitone:'C', octave: 5},
 	{semitone:'D', octave: 5},
 	{semitone:'E', octave: 5},
 	{semitone:'G', octave: 5},
 	{semitone:'A', octave: 5}	
-]
-const bluesMinor = [
+],
+ bluesMinor: [
 	{semitone:'C', octave: 5},
 	{semitone:'D#', octave: 5},
 	{semitone:'F', octave: 5},
 	{semitone:'F#', octave: 5},
 	{semitone:'G', octave: 5},
 	{semitone:'A#', octave: 5}
-]
-const bluesMajor = [
+],
+ bluesMajor: [
 	{semitone:'C', octave: 5},
 	{semitone:'D', octave: 5},
 	{semitone:'D#', octave: 5},
@@ -74,12 +75,4 @@ const bluesMajor = [
 	{semitone:'G', octave: 5},
 	{semitone:'A', octave: 5}
 ]
-const scaleList = {
-	chromatic,
-	naturalMinor,
-	naturalMajor,
-	pentatonicMinor,
-	pentatonicMajor,
-	bluesMinor,
-	bluesMajor
 };
