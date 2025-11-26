@@ -2,11 +2,16 @@ import { useState } from 'react';
 import SpeakerOn from '../../assets/icons/speaker-on-icon.png'
 import "./GuiVolume.css"
 
-export function GuiVolume() {
+export function GuiVolume({userSettings, setUserSettings}) {
     const [volumeLevel, setVolumeLevel] = useState('50');
 
     const changeVolume = (event) => {
         setVolumeLevel(event.target.value);
+        setUserSettings({
+            ...userSettings,
+            volume: volumeLevel
+        })
+        //console.log(userSettings);//for debugging purpouses.
     };
 
     return (
