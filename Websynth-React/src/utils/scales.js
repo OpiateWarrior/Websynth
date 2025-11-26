@@ -1,4 +1,4 @@
-const sequence = [
+export const sequence = [
 	{semitone:'C', octave: 5},
 	{semitone:'C#', octave: 5},
 	{semitone:'D', octave: 5},

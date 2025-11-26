@@ -3,7 +3,7 @@ import SpeakerOn from '../../assets/icons/speaker-on-icon.png'
 import "./GuiVolume.css"
 
 export function GuiVolume({userSettings, setUserSettings}) {
-    const [volumeLevel, setVolumeLevel] = useState('50');
+    const [volumeLevel, setVolumeLevel] = useState(userSettings.volume);
 
     const changeVolume = (event) => {
         setVolumeLevel(event.target.value);

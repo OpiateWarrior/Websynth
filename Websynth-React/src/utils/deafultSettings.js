@@ -1,7 +1,7 @@
 export const deafultSettings = {
     scale: "chromatic",
-    key: "C",
-    volume: "50",
-    startingOctave: "4",
-    rangeOfOctaves: "1"
+    key: "D",
+    volume: "30",
+    startingOctave: "5",
+    rangeOfOctaves: "2"
 }
