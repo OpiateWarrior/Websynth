@@ -1,9 +1,10 @@
-	body {
-		background: #020024;
-		background: linear-gradient(45deg,rgba(2, 0, 36, 1) 0%, rgba(9, 121, 26, 1) 56%, rgba(22, 184, 22, 1) 100%);		
-		background-attachment: fixed;
-		display:flex;
-	}
-	.key-selector {
-		color: white;
-	}
+body {
+	background: #020024;
+	background: linear-gradient(45deg, rgba(2, 0, 36, 1) 0%, rgba(9, 121, 26, 1) 56%, rgba(22, 184, 22, 1) 100%);
+	background-attachment: fixed;
+	display: flex;
+}
+
+.key-selector {
+	color: white;
+}

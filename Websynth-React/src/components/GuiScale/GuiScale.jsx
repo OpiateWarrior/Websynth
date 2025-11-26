@@ -10,7 +10,7 @@ export function GuiScale() {
                 <img src={ViolinKey} alt="Violin key icon" className="gui-header-icon"></img>
             </div>
             <div className="gui-element">
-                <label className="key-selector" for="key">KEY:</label>
+                <label className="key-selector" >KEY:</label>
 
                 <select id="js-key-select" name="key" className="dropdown-element">
                     <option className="option-label" value="C">C</option>
@@ -28,7 +28,7 @@ export function GuiScale() {
                 </select>
             </div>
             <div className="gui-element">
-                <label className="key-selector" for="scale">SCALE:</label>
+                <label className="key-selector">SCALE:</label>
 
                 <select id="js-scale-select" name="scale" className="dropdown-element">
                     <option value="chromatic">chromatic</option>
@@ -41,7 +41,7 @@ export function GuiScale() {
                 </select>
             </div>
             <div className="gui-element">
-                <label className="key-selector" for="octave">STARTING OCTAVE:</label>
+                <label className="key-selector">STARTING OCTAVE:</label>
 
                 <select id="js-octave-select" name="octave" className="dropdown-element">
                     <option value="1">1</option>
@@ -52,7 +52,7 @@ export function GuiScale() {
                 </select>
             </div>
             <div className="gui-element">
-                <label className="key-selector" for="octave-range">RANGE OF OCTAVES:</label>
+                <label className="key-selector">RANGE OF OCTAVES:</label>
 
                 <select id="js-range-select" name="octave-range" className="dropdown-element">
                     <option value="1">1</option>
