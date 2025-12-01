@@ -31,8 +31,10 @@ export function newKeyboard(userSettings) {
   let pianoKeys = deepCloneArray(listOfScales[scale] || []);
   pianoKeys = pianoKeys.map(tone => shiftTone(tone, keyIndex, sequence, octave));
 
+  const pianoKeysToCopy = deepCloneArray(pianoKeys);
+
   for (let i = 1; i < range; i++) {
-    const higherOctaveTones = pianoKeys.map(tone => ({ ...tone, octave: tone.octave + i }));
+    const higherOctaveTones = pianoKeysToCopy.map(tone => ({ ...tone, octave: tone.octave + i }));
     pianoKeys = [...pianoKeys, ...higherOctaveTones];
   }
 

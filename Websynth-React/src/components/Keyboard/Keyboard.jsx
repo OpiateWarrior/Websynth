@@ -7,6 +7,7 @@ export function Keyboard( {userSettings} ) {
 
     useEffect(()=>{
         setKeyboard(newKeyboard(userSettings))
+        console.log(keyboard)
     }, [userSettings]);
 
     return (
