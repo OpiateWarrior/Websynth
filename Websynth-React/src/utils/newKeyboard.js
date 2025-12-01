@@ -1,43 +1,41 @@
 import { listOfScales } from "./scales";
 
-export function newKeyboard(userSettings) {
+const sequence = ['C', 'C#', 'D', 'D#', 'E', 'F', 'F#', 'G', 'G#', 'A', 'A#', 'B'];
 
-  const tonesSequence = listOfScales.sequence.map(tone => tone.semitone);
-  //console.log(tonesSequence);
+function deepCloneArray(array) {
+  return array.map(item => ({ ...item }));
+}
 
-  const keyIndex = tonesSequence.indexOf(userSettings.key);
-  //console.log(keyIndex);
-
-  function copyArray(array) {
-    return JSON.parse(JSON.stringify(array));
+function shiftTone(tone, keyIndex, sequence, octave) {
+  let semitoneIndex = sequence.indexOf(tone.semitone); // Convert to numerical value
+  semitoneIndex += keyIndex;
+  
+  if (semitoneIndex > 11) {
+    octave++;
+    semitoneIndex -= 12;
   }
 
-  //Shift the scale according to the selected key
-  let scale = copyArray(listOfScales[userSettings.scale]); //Copy of selected scale.
-      
-    scale.forEach((tone) => {
-      tone.semitone = tonesSequence.indexOf(tone.semitone); //Change tones to numerical values
-      tone.semitone += keyIndex;
-      tone.octave =	userSettings.startingOctave;
+  const semitone = sequence[semitoneIndex];  // Convert back to note name
 
-      if (tone.semitone > 11)
-      {
-         tone.octave++;
-        tone.semitone -= 12;
-      }
-        
-      tone.semitone = tonesSequence[tone.semitone]; //Change tones to string values
-    })
-    //console.log(scale);
-    /*
-    for ( let i = 1 ; i < userSettings.rangeOfOctaves ; i++ )
-      {
-        let scaleToRaise= copyArray(scale);
-        
-        scaleToRaise.forEach((tone)=>{
-          tone.octave+=i
-        })
-        
-        scale = scale.concat(scaleToRaise);
-      } */
+  return {
+    ...tone,
+    semitone: semitone,
+    octave
+  };
+}
+
+export function newKeyboard(userSettings) {
+  const { key, scale, octave, range } = userSettings;
+  const keyIndex = sequence.indexOf(key);
+
+  let pianoKeys = deepCloneArray(listOfScales[scale] || []);
+  pianoKeys = pianoKeys.map(tone => shiftTone(tone, keyIndex, sequence, octave));
+
+  for (let i = 1; i < range; i++) {
+    const higherOctaveTones = pianoKeys.map(tone => ({ ...tone, octave: tone.octave + i }));
+    pianoKeys = [...pianoKeys, ...higherOctaveTones];
+  }
+
+  console.log(pianoKeys); 
+  return pianoKeys;
 }
