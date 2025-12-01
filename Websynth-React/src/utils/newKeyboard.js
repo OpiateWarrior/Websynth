@@ -36,6 +36,5 @@ export function newKeyboard(userSettings) {
     pianoKeys = [...pianoKeys, ...higherOctaveTones];
   }
 
-  console.log(pianoKeys); 
   return pianoKeys;
 }

@@ -3,18 +3,25 @@ import './Keyboard.css'
 import { newKeyboard } from '../../utils/newKeyboard';
 
 export function Keyboard( {userSettings} ) {
-    const [keyboard, setKeyboard] = useState();
+    const [keyboard, setKeyboard] = useState(newKeyboard(userSettings));
 
     useEffect(()=>{
-        console.log(userSettings);
         setKeyboard(newKeyboard(userSettings))
     }, [userSettings]);
 
     return (
         <div className = "keyboard">
-            <button className="keyboardButton" >
-				A
-			</button>
+            {keyboard.map((key)=>{
+                return(
+                    <button 
+                        className="keyboardButton"
+                        key={key.semitone+key.octave}
+                        id={key.semitone+key.octave}
+                    >
+				        {key.semitone}
+			        </button>
+                );
+            })}
         </div>
     );
 }
