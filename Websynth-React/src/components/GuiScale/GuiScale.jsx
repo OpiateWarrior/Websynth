@@ -1,48 +1,41 @@
-import { use, useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import ViolinKey from '../../assets/icons/violin-key-icon.jpg'
 import "./GuiScale.css"
 
 
 export function GuiScale({userSettings, setUserSettings}) {
-    const [selectedKey, setSelectedKey] = useState(userSettings.key);
-    const [selectedScale, setSelectedScale] = useState(userSettings.scale);
-    const [startingOctave, setStartingOctave] = useState(userSettings.startingOctave);
-    const [rangeOfOctaves, setRangeOfOctaves] = useState(userSettings.rangeOfOctaves);
+    const [key, setKey]       = useState(userSettings.key);
+    const [scale, setScale]   = useState(userSettings.scale);
+    const [octave, setOctave] = useState(userSettings.octave);
+    const [range, setRange]   = useState(userSettings.range);
 
-    const changeKey = (event) => {
-        setSelectedKey(event.target.value);
-        setUserSettings({
-            ...userSettings,
-            key: selectedKey
-        })
-        //console.log(userSettings);//for debugging purpouses.
-    }
+    /*useEffect(()=>{
+        console.log(userSettings);
+    }, [userSettings]);*/
 
-    const changeScale = (event) => {
-        setSelectedScale(event.target.value);
-        setUserSettings({
-            ...userSettings,
-            scale: selectedScale
-        })
-        //console.log(userSettings);//for debugging purpouses.
-    }   
+    const changeSettings = (event) => {
+        const {name, value} = event.target;
 
-    const changeStartingOctave = (event) => {
-        setStartingOctave(event.target.value);
-        setUserSettings({
-            ...userSettings,
-            startingOctave: startingOctave
-        })
-        //console.log(userSettings);//for debugging purpouses.
-    }
-
-    const changeRangeOfOctaves = (event) => {
-        setRangeOfOctaves(event.target.value);
-        setUserSettings({
-            ...userSettings,
-            rangeOfOctaves: rangeOfOctaves
-        })
-        //console.log(userSettings);//for debugging purpouses.
+        switch (name) {
+            case 'key':
+                setKey(value);
+                setUserSettings({...userSettings, key: value});
+                break;
+            case 'scale':
+                setScale(value);
+                setUserSettings({...userSettings, scale: value});
+                break;
+            case 'octave':
+                setOctave(value);
+                setUserSettings({...userSettings, octave: Number(value)});
+                break;
+            case 'range':
+                setRange(value);
+                setUserSettings({...userSettings, range: Number(value)});
+                break;
+            deafult:
+                break;
+        }
     }
 
     return (
@@ -55,8 +48,9 @@ export function GuiScale({userSettings, setUserSettings}) {
 
                 <select 
                     className="dropdown-element" 
-                    value={selectedKey}
-                    onChange={changeKey}
+                    name="key"
+                    value={key}
+                    onChange={changeSettings}
                 >
                     <option className="option-label" value="C">C</option>
                     <option className="option-label" value="C#">C#</option>
@@ -78,8 +72,9 @@ export function GuiScale({userSettings, setUserSettings}) {
 
                 <select 
                     className="dropdown-element"
-                    value={selectedScale}
-                    onChange={changeScale}
+                    name="scale"
+                    value={scale}
+                    onChange={changeSettings}
                 >
                     <option value="chromatic">chromatic</option>
                     <option value="naturalMinor">natural Minor</option>
@@ -96,8 +91,9 @@ export function GuiScale({userSettings, setUserSettings}) {
 
                 <select 
                     className="dropdown-element"
-                    value={startingOctave}
-                    onChange={changeStartingOctave}
+                    name="octave"
+                    value={octave}
+                    onChange={changeSettings}
                 >
                     <option value={1}>1</option>
                     <option value={2}>2</option>
@@ -112,8 +108,9 @@ export function GuiScale({userSettings, setUserSettings}) {
 
                 <select 
                     className="dropdown-element"
-                    value={rangeOfOctaves}
-                    onChange={changeRangeOfOctaves}
+                    name="range"
+                    value={range}
+                    onChange={changeSettings}
                 >
                     <option value={1}>1</option>
                     <option value={2}>2</option>

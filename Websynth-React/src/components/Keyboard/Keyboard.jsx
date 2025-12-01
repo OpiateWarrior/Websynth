@@ -1,8 +1,13 @@
+import { useEffect, useState } from 'react';
 import './Keyboard.css'
+import { newKeyboard } from '../../utils/newKeyboard';
 
-export function Keyboard() {
+export function Keyboard( {userSettings} ) {
+    const [keyboard, setKeyboard] = useState();
 
-
+    useEffect(()=>{
+        console.log(userSettings);
+    }, [userSettings]);
 
     return (
         <div className = "keyboard">
