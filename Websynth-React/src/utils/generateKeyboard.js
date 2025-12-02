@@ -3,19 +3,19 @@ import { listOfScales } from "./scales";
 const sequence = ['C', 'C#', 'D', 'D#', 'E', 'F', 'F#', 'G', 'G#', 'A', 'A#', 'B'];
 
 function deepCloneArray(array) {
-  return array.map(item => ({ ...item }));
+  return array.map(scale => ({ ...scale }));
 }
 
 function shiftTone(tone, keyIndex, sequence, octave) {
-  let semitoneIndex = sequence.indexOf(tone.semitone); // Convert to numerical value
-  semitoneIndex += keyIndex;
+  let semitoneIndex = sequence.indexOf(tone.semitone); // Convert semitones to numerical value
+  semitoneIndex += keyIndex;                           // Shift selected scale by key index
   
   if (semitoneIndex > 11) {
     octave++;
     semitoneIndex -= 12;
   }
 
-  const semitone = sequence[semitoneIndex];  // Convert back to note name
+  const semitone = sequence[semitoneIndex];             // Convert back to note name
 
   return {
     ...tone,
@@ -24,7 +24,7 @@ function shiftTone(tone, keyIndex, sequence, octave) {
   };
 }
 
-export function newKeyboard(userSettings) {
+export function generateKeyboard(userSettings) {
   const { key, scale, octave, range } = userSettings;
   const keyIndex = sequence.indexOf(key);
 
