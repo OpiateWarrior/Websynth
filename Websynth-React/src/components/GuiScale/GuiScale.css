@@ -2,15 +2,16 @@
 	width: 250px;
 	display: flex;
 	flex-direction: column;
-	background: rgba(255, 255, 255, 0.2);
+	transition: 0.2s;
+	margin: 20px;
+	color: white;
+
+	background: rgba(110, 110, 110, 0.2);
 	backdrop-filter: blur(5px);
 	-webkit-backdrop-filter: blur(5px);
 	border-radius: 10px;
 	border: 0px solid rgba(255, 255, 255, 0.3);
 	box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
-	transition: 0.2s;
-	margin: 20px;
-	color: white;
 }
 .gui-container:hover{
 	box-shadow: 0 4px 30px rgba(0, 0, 0, 0.6);
@@ -39,9 +40,11 @@
 	font-weight: bold;
 	border: 1px solid rgba(255, 255, 255, 0.3);
 	border-bottom: none;
+	transition: 0.2s;
 }
 .gui-element:hover{
-	background: rgba(255, 255, 255, 0.1);
+	background: rgba(211, 211, 211, 0.2);
+	transition: 0.2s;
 }
 .gui-element:last-child {
 	border-bottom: 1px solid rgba(255, 255, 255, 0.3);
@@ -49,7 +52,6 @@
 }
 select,::picker(select) {
   appearance: base-select;
-  
 }
 select::picker-icon {
   color: gray;
@@ -60,7 +62,7 @@ select:open::picker-icon {
 	rotate: 60deg;
 }
 ::picker(select) {
-  	background: rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.2);
 	box-shadow: 0 4px 30px rgba(0, 0, 0, 0.8);
 	backdrop-filter: blur(5px);
 	-webkit-backdrop-filter: blur(5px);
@@ -75,17 +77,25 @@ select:open::picker-icon {
 .dropdown-element{
 	width: 150px;
 	height: 50px;
-	display: flex;
-	align-items: center;
-	justify-content: center;
 	padding: 10px;
 	border-style:none;
-	background-color: rgb(27,27,27);
 	color: white;
 	font-size: 15px;
-	font-weight: normal;
+	background: rgba(110, 110, 110, 0.2);
+	backdrop-filter: blur(5px);
+	-webkit-backdrop-filter: blur(5px);
+	border-radius: 10px;
+	border: 0px solid rgba(255, 255, 255, 0.3);
+	box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
 }
+.dropdown-element:hover{
+	cursor: pointer;
+	transition: 0.2s;
 
-canvas {
-  border: 2px solid black;
+	background: rgba(2, 2, 2, 0.397);
+	backdrop-filter: blur(5px);
+	-webkit-backdrop-filter: blur(5px);
+	border-radius: 10px;
+	border: 0px solid rgba(255, 255, 255, 0.3);
+	box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
 }
